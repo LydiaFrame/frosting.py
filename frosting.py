@@ -11,7 +11,6 @@ import locale
 
 def calculate_area(diameter, height, layers):
     """Calculate the total area of frosting needed for the cake.
-    
     Args:
     diameter (float): diameter of the cake
     height (float): height of the cake
@@ -21,8 +20,8 @@ def calculate_area(diameter, height, layers):
     float: total area that needs to be covered by frosting
     """
     radius = diameter / 2
-    area_per_layer = math.pi * (radius ** 2)  # Area of the top/bottom of the layer
-    side_area = math.pi * diameter * height  # Side area (side wrapped around the cake)
+    area_per_layer = math.pi * (radius ** 2)
+    side_area = math.pi * diameter * height
     
     total_area = (area_per_layer * layers) + side_area
     return total_area
@@ -43,7 +42,7 @@ def main():
 
     # Each tub covers 60 square inches
     coverage_per_tub = 60
-    tubs_needed = math.ceil(total_area / coverage_per_tub)  # Round up to nearest tub
+    tubs_needed = math.ceil(total_area / coverage_per_tub)
 
     # Each tub costs $1.25
     cost_per_tub = 1.25
@@ -53,7 +52,7 @@ def main():
     try:
         locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
     except locale.Error:
-        locale.setlocale(locale.LC_ALL, 'en_US')  # Fallback to en_US
+        locale.setlocale(locale.LC_ALL, 'en_US')
 
     # Output the results
     print(f'Num tubs: {tubs_needed:5d}')
